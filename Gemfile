@@ -51,10 +51,14 @@ gem 'carrierwave'
 gem 'mini_magick',             '4.7.0'
 
 gem 'carrierwave-aws'
+
 group :development, :test do
   gem 'sqlite3'
 end
+
 group :production do
   gem 'pg', '0.18.4'
 
 end
+
+gem 'devise' 

@@ -1,3 +1,4 @@
+=begin
 CarrierWave.configure do |config|
   config.storage    = :aws
   config.aws_bucket = ENV.fetch('S3_BUCKET_NAME')
@@ -30,3 +31,4 @@ CarrierWave.configure do |config|
   #   Aws::CF::Signer.sign_url(unsigned_url, options)
   # end
 end
+=end
