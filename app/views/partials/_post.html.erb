@@ -1,0 +1,5 @@
+<% @posts.each do |post| %>
+<% if post.post_image? %>
+    <%= link_to image_tag(post.post_image_url), post_path(post) %>
+<% end %>
+<% end %>

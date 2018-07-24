@@ -2,9 +2,7 @@
 <p><%= @user.first_name %> is followed by.</p>
 <% if @users.length > 0  %>
   <% @users.each do |user|  %>
-    <p><%= user.username %></p>
-    <%= link_to "#{user.first_name} follows", followers_user_path(user) %>
-    <%= link_to "#{user.first_name} is followed by", following_user_path(user) %>
+    <%= link_to "#{user.first_name}", user_path(user) %>
 
   <% end %>
 <% end %>

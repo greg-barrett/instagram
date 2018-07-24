@@ -1,10 +1,7 @@
-<h1>The people you follow</h1>
+<h1>Followings</h1>
 <p><%= @user.first_name %> is currently following.</p>
 <% if @users.length > 0  %>
   <% @users.each do |user|  %>
-    <p><%= user.username %></p>
-    <%= link_to "#{user.first_name} follows", followers_user_path(user) %>
-    <%= link_to "#{user.first_name} is followed by", following_user_path(user) %>
-
+    <%= link_to "#{user.first_name}", user_path(user) %>
   <% end %>
 <% end %>

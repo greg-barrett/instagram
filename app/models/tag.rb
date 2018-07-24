@@ -1,6 +1,5 @@
 class Tag < ApplicationRecord
   before_validation :lowercase, :hashit
-  has_many :taggings
   has_many :posts, :through => :taggings
 
   validates :hashtag, presence: true, uniqueness: true
@@ -15,4 +14,5 @@ class Tag < ApplicationRecord
   def hashit
     self.hashtag="#"+ self.hashtag if self.hashtag[0]!="#"
   end
+
 end

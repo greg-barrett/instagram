@@ -1,0 +1,6 @@
+<div class="box">
+  <h2>Following</h2>
+    <% @following.each do |followed|  %>
+      <%= link_to "#{followed.username}", user_path(followed) %>
+    <% end %>
+</div>

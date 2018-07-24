@@ -1,0 +1,21 @@
+<%= form_for @post, :html =>{:multipart => true}  do |f| %>
+  <div class="box">
+    <%= f.hidden_field :user_id %>
+    <%= f.label :post_image %>
+    <%= f.file_field :post_image %>
+  </div>
+
+  <div class="box">
+    <%= f.label :caption %>
+    <%= f.text_field :caption %>
+  </div>
+
+  <div class="box">
+    <p>Tags</p>
+    <%= f.fields_for :tags do |tag_form| %>
+    <%= tag_form.label :hashtag %>
+      <%= tag_form.text_field :hashtag %>
+    <% end  %>
+  </div>
+  <%= f.submit %>
+  <% end %>

@@ -1,2 +1,16 @@
-<h1>Profile Page</h1>
-<p>Username: <%= @user.username %></p>
+<div class="box">
+  <h1>Profile Page</h1>
+
+  <p>Username: <%= @user.username %></p>
+  <p><%= link_to "Edit Profile", edit_user_registration_path(@user) if @user === current_user %>
+  <p><%= link_to "Followed by #{@followers} people", followers_user_path(@user) %></p>
+  <p><%= link_to "Following #{@following} people", following_user_path(@user) %></p>
+</div>
+
+<%= render "partials/post" if @posts.length > 0 %>
+
+<% if @user === current_user %>
+  <div class="box">
+    <%= render "partials/post_form" %>
+</div>
+<% end %>

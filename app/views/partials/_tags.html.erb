@@ -1,0 +1,4 @@
+<p>Tags:</p>
+<% @tags.each do |tag| %>
+<%= link_to tag.hashtag, tag_path(tag) %>
+<% end %>
