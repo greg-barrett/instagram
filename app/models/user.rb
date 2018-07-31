@@ -4,9 +4,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, authentication_keys: [:login]
   mount_uploader :avatar, AvatarUploader
-  has_many :posts
-  has_many :comments
-  has_many :likes
+  has_many :posts, dependent: :destroy
+  has_many :comments, dependent: :destroy
+  has_many :likes, dependent: :destroy
   has_many :liked_posts, :through => :likes, :source => :post
 
   has_many :active_followings, class_name: "Following", foreign_key: "follower_id", dependent: :destroy

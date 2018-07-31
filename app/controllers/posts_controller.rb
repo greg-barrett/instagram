@@ -4,6 +4,7 @@ class PostsController < ApplicationController
   def show
     @post=Post.find(params[:id])
     @tags=@post.tags
+    @comments=@post.comments
   end
 
   def home
@@ -18,6 +19,11 @@ class PostsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def destroy
+    Post.find(params[:id]).destroy
+    redirect_to user_path(current_user)
   end
 
   private

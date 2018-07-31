@@ -1,0 +1,11 @@
+<% @comments.each do |comment| %>
+
+<div class="box">
+  <%= comment.text %>
+  <p><%= comment.user.username %></p>
+  <% if comment.user === current_user %>
+  <%= link_to "delete", comment_path(comment), method: :delete %>
+  <% end %>
+</div>
+
+<% end %>

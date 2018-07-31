@@ -6,4 +6,25 @@
 <p> Posted by : <%= link_to "#{@post.user.username}", user_path(@post.user) %></p>
 <%= render 'partials/tags' %>
 <p>Likes: <%=@post.likes.length %></p>
+  <% if liked?(@post) %>
+    <%= render "partials/unlike" %>
+  <% else %>
+    <%= render "partials/like" %>
+<% end %>
 </div>
+
+<% if @post.user === current_user %>
+<div class="box">
+  <%= render "partials/delete_post" %>
+</div>
+<% end %>
+
+<div class="box">
+  <%= render "partials/comment_form" %>
+</div>
+
+<% if @post.comments.length > 0 %>
+<div class="box">
+  <%= render "partials/comments" %>
+</div>
+<% end %>

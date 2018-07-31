@@ -1,0 +1,10 @@
+<%= form_for(Comment.new ) do |f| %>
+  <p>Comment below...</p>
+  <%= f.hidden_field :post_id, value: @post.id %>
+  <div class="box">
+    <%= f.label :text %>
+    <%= f.text_field :text %>
+  </div>
+
+  <%= f.submit "Save "%>
+  <% end %>

@@ -7,6 +7,7 @@ class UsersController < ApplicationController
     @posts=@user.posts
     @post=@user.posts.build
     @post.tags.build
+
   end
 
   def followers
@@ -18,4 +19,5 @@ class UsersController < ApplicationController
     @user= User.find(params[:id])
     @users=@user.following
   end
+
 end

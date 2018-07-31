@@ -5,6 +5,13 @@
   <p><%= link_to "Edit Profile", edit_user_registration_path(@user) if @user === current_user %>
   <p><%= link_to "Followed by #{@followers} people", followers_user_path(@user) %></p>
   <p><%= link_to "Following #{@following} people", following_user_path(@user) %></p>
+
+  <% if !followed_by_visitor?(@user.followers) %>
+    <%= render "partials/following_form" %>
+    <% else  %>
+    <%= render "partials/un_following_form" %>
+  <% end %>
+
 </div>
 
 <%= render "partials/post" if @posts.length > 0 %>

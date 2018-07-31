@@ -1,0 +1,5 @@
+<div class="box">
+ <%= form_for(@user.passive_followings.find_by(follower_id: current_user.id), html: { method: :delete }) do |f| %>
+ <%= f.submit "Un follow" %>
+ <% end %>
+</div>
