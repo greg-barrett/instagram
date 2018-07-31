@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   # users routes
-  resources :users, :only => [:show] do
+  resources :users, :only => [:show, :edit, :update] do
     member do
       get 'followers'
       get 'following'

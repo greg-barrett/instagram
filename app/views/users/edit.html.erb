@@ -1,0 +1,15 @@
+<div class="box">
+
+  <%= form_for((@user), :html =>{:multipart => true})  do |f| %>
+    <div class="box">
+      <%= f.hidden_field :user_id, value: @user.id %>
+      <%= f.label :avatar %>
+      <%= f.file_field :avatar %>
+    </div>
+
+    <%= f.submit %>
+    <% end %>
+
+
+
+</div>

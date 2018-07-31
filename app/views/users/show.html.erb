@@ -1,5 +1,12 @@
 <div class="box">
   <h1>Profile Page</h1>
+  <% if @user.avatar %>
+    <%= image_tag @user.avatar %>
+  <% end %>
+
+  <% if @user === current_user %>
+    <%= link_to "Update Image", edit_user_path(current_user) %>
+  <% end %>
 
   <p>Username: <%= @user.username %></p>
   <p><%= link_to "Edit Profile", edit_user_registration_path(@user) if @user === current_user %>
