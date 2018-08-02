@@ -1,0 +1,6 @@
+<div class="">
+ <%= form_for local_assigns[:post].likes.build do |f| %>
+ <%= f.hidden_field :post_id, value: post.id %>
+ <%= f.submit "Submit", :type => :image, :src => image_path("like.png"), :class=> :like %>
+ <% end %>
+</div>

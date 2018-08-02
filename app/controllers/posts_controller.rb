@@ -12,10 +12,10 @@ class PostsController < ApplicationController
 
 
   def create
-    @post= Post.new(post_params)
+    @post= current_user.posts.build(post_params)
     if @post.save
       processtags(@post)
-      redirect_to user_path(post_params[:user_id])
+      redirect_to current_user
     else
       render :new
     end
@@ -29,7 +29,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:post_image, :caption, :user_id)
+    params.require(:post).permit(:post_image, :caption)
   end
 
   def tags

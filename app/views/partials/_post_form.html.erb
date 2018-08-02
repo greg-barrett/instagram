@@ -1,6 +1,5 @@
 <%= form_for @post, :html =>{:multipart => true}  do |f| %>
   <div class="box">
-    <%= f.hidden_field :user_id %>
     <%= f.label :post_image %>
     <%= f.file_field :post_image %>
   </div>

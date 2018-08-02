@@ -1,4 +1,4 @@
 <h1><%= @taggings.first.tag.hashtag %></h1>
 <% @taggings.each do |tagging| %>
-<%= image_tag tagging.post.post_image_url %>
+<%= link_to image_tag(tagging.post.post_image.main.url), post_path(tagging.post) %>
 <% end  %>

@@ -1,0 +1,12 @@
+<% post.comments.each do |comment| %>
+
+<div class="comments-container">
+
+  <p class="caption_line" id="username"><%= comment.user.username %></p>
+  <p class="caption_line"><%= comment.text %></p>
+  <% if comment.user === current_user %>
+    <%= link_to "Remove", comment_path(comment), method: :delete, class: :caption_line, id: :username %>
+  <% end %>
+</div>
+
+<% end %>

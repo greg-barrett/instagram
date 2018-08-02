@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'posts#home'
+  root "feeds#show"
   devise_for :users
 
   # users routes
@@ -18,6 +18,8 @@ Rails.application.routes.draw do
 
   resources :tags
   resources :followings, :likes, :comments
+  get "/feed", to: "feeds#show"
+  get "/explore", to: "feeds#explore"
 
 
 

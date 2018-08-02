@@ -1,30 +1,35 @@
-<div class="box">
-  <h1>Profile Page</h1>
-  <% if @user.avatar %>
-    <%= image_tag @user.avatar %>
+<div class="user-info">
+  <div class="user-avatar">
+  <% if !@user.avatar.file.nil? %>
+    <%= image_tag @user.avatar.main.url, class: :avatar  %>
+  <% else %>
+    <%= image_tag "liked.png", class: :avatar  %>
   <% end %>
 
   <% if @user === current_user %>
-    <%= link_to "Update Image", edit_user_path(current_user) %>
+    <p><%= link_to "Update Image", edit_user_path(current_user) %></p>
   <% end %>
-
-  <p>Username: <%= @user.username %></p>
-  <p><%= link_to "Edit Profile", edit_user_registration_path(@user) if @user === current_user %>
-  <p><%= link_to "Followed by #{@followers} people", followers_user_path(@user) %></p>
-  <p><%= link_to "Following #{@following} people", following_user_path(@user) %></p>
-
-  <% if !followed_by_visitor?(@user.followers) %>
-    <%= render "partials/following_form" %>
-    <% else  %>
-    <%= render "partials/un_following_form" %>
-  <% end %>
-
+</div>
+<div class="user-links">
+    <p>Username: <%= @user.username %></p>
+    <p><%= link_to "Edit Profile", edit_user_registration_path(@user) if @user === current_user %>
+    <p><%= link_to "Followed by #{@followers} people", followers_user_path(@user) %></p>
+    <p><%= link_to "Following #{@following} people", following_user_path(@user) %></p>
+    <% if @user != current_user %>
+      <% if !followed_by_visitor?(@user.followers) %>
+        <%= render "partials/following_form" %>
+        <% else  %>
+        <%= render "partials/un_following_form" %>
+      <% end %>
+    <% end %>
+  </div>
 </div>
 
-<%= render "partials/post" if @posts.length > 0 %>
+
+<%= render "partials/posts" if @posts.length > 0 %>
 
 <% if @user === current_user %>
   <div class="box">
     <%= render "partials/post_form" %>
-</div>
+  </div>
 <% end %>

@@ -1,0 +1,7 @@
+<div class="comment-form-container">
+  <%= form_for(Comment.new ) do |f| %>
+  <%= f.hidden_field :post_id, value: post.id %>
+  <%= f.text_field :text, :placeholder => "Add a comment...", class: :comment_field %>
+  <%= f.submit "Save", class: :comment_sub %>
+  <% end %>
+</div>

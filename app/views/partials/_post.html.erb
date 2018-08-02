@@ -1,5 +1,47 @@
 <% @posts.each do |post| %>
-<% if post.post_image? %>
-    <%= link_to image_tag(post.post_image_url), post_path(post) %>
-<% end %>
+<div class="post-container">
+
+  <%= link_to  user_path(post.user) do %>
+    <div class="user-info">
+      <% if !post.user.avatar.file.nil? %>
+          <%= image_tag(post.user.avatar.main.url, class: :user_image) %>
+      <% end %>
+      <p class="user_name"><%= post.user.username %></p>
+    </div>
+  <% end %>
+
+  <%= link_to image_tag(post.post_image.main.url, class: :post_image), post_path(post) %>
+
+  <div class="post-info">
+
+    <% if liked?(post) %>
+      <%= render "partials/hunlike", post: post %>
+    <% else %>
+      <%= render "partials/hlike", post: post %>
+    <% end %>
+
+    <p><%=post.likes.length %> Likes</p></br>
+    <p class="caption_line" id="username"><%= post.user.username %></p>
+    <p class="caption_line"><%= "  #{post.caption}" %></p></br>
+
+    <div class="">
+      <%= render "partials/hcomment_form", post: post %>
+    </div>
+
+    <% if post.comments.length > 0 %>
+    <div class="">
+      <%= render "partials/hcomments", post: post %>
+    </div>
+    <% end %>
+
+    <% if post.user === current_user %>
+      <%= render "partials/hdelete_post", post: post %>
+    <% end %>
+
+  </div>
+
+</div>
+
+
+
 <% end %>

@@ -1,0 +1,9 @@
+<div class="users-posts">
+  <% @posts.each do |p| %>
+    <%= link_to post_path(p) do %>
+      <div class="mini-post">
+        <%= image_tag p.post_image.main %>
+      </div>
+    <% end %>
+  <% end %>
+</div>

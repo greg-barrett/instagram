@@ -1,7 +1,7 @@
 <h1>Posts</h1>
 <div class="box">
 <p>This is a Post</p>
-<%= image_tag @post.post_image_url %>
+<%= image_tag @post.post_image.main.url %>
 <p> Post caption : <%= @post.caption %></p>
 <p> Posted by : <%= link_to "#{@post.user.username}", user_path(@post.user) %></p>
 <%= render 'partials/tags' %>

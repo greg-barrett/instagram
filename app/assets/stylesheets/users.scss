@@ -1,3 +1,38 @@
-// Place all the styles related to the Users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+
+/*----USERS SHOW ----*/
+
+.users-posts {
+  max-width: 935px;
+  margin: auto;
+
+}
+.mini-post {
+  display: inline-block;
+  width: 30%;
+  margin: 1%;
+  img {
+    max-width: 100%;
+  }
+}
+
+.user-info {
+  max-width: 935px;
+  margin: auto;
+  height: 250px;
+  padding: 40px 0 0 0;
+
+}
+.avatar {
+  width: 120px;
+  border-radius: 50%;
+  display: inline-block;
+}
+.user-avatar {
+  display: inline-block;
+  width: 29%;
+}
+
+.user-links {
+  display: inline-block;
+  width: 69%;
+}

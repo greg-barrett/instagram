@@ -1,11 +1,11 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user!
+
   def show
     @user= User.find(params[:id])
     @followers=@user.followers.length
     @following=@user.following.length
     @posts=@user.posts
-    @post=@user.posts.build
+    @post=Post.new
     @post.tags.build
   end
 
@@ -21,6 +21,17 @@ class UsersController < ApplicationController
       render 'edit'
     end
   end
+
+  def home
+    @user=current_user
+    @followers=@user.followers.length
+    @following=@user.following.length
+    @posts=@user.posts
+    @post=@user.posts.build
+    @post.tags.build
+    redirect_to @user
+  end
+
 
   def followers
     @user= User.find(params[:id])

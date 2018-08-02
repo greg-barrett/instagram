@@ -2,7 +2,7 @@ class FollowingsController < ApplicationController
   def create
     @relationship=current_user.active_followings.build(following_params)
     if @relationship.save
-      redirect_to current_user
+      redirect_to @relationship.followed
     else
       redirect_to current_user
     end

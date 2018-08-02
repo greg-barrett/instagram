@@ -1,0 +1,5 @@
+<div class="">
+ <%= form_for(post.likes.find_by(user_id: current_user.id), html: { method: :delete }) do |f| %>
+ <%= f.submit "Unlike", :type => :image, :src => image_path("liked.png"), :class=> :like %>
+ <% end %>
+</div>
