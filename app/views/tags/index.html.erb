@@ -1,0 +1,9 @@
+<% provide(:title, @hashtag) %>
+<h1><%= @hashtag %></h1>
+<% if @posts %>
+  <%= render "partials/posts" %>
+<% else %>
+  <div class="no-result">
+    <p>No results</p>
+  </div>
+<% end %>

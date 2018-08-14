@@ -1,0 +1,4 @@
+
+ <%= form_for(user.passive_followings.find_by(follower_id: current_user.id), html: { method: :delete }, remote: true) do |f| %>
+ <%= f.submit "Following", class: :follow_btn, id: :follow_btn %>
+ <% end %>

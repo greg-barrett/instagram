@@ -1,3 +1,51 @@
 // Place all the styles related to the Followings controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.follows-list {
+  width: 600px;
+  margin: auto;
+  background-color: white;
+  padding-top: 10px;
+  border-radius: 3px;
+  h2 {
+    width: 100px;
+    margin: 0 auto 10px auto;
+    font-size: 1.5em;
+  }
+}
+.f-user-box {
+  display: inline-block;
+  width: 100%;
+  border-top: 1px solid #dedede;
+}
+.f-avatar-box {
+  float: left;
+  width: 10%;
+  margin: 12px;
+  img {
+    max-width: 100%;
+    border-radius: 50%;
+  }
+}
+.f-details-box {
+  float: left;
+  line-height: 1.2em;
+  margin-top: 19px;
+  #username {
+    font-weight: bold;
+    font-size: .9em;
+  }
+  #name {
+    font-weight: lighter;
+    font-size: .7em;
+    color: gray;
+  }
+
+}
+
+.f-follow-box {
+  float: right;
+  margin-right: 15px;
+  margin-top: 22px;
+
+}

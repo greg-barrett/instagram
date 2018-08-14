@@ -1,6 +1,5 @@
-<div class="box">
- <%= form_for @post.likes.build do |f| %>
+
+ <%= form_for @post.likes.build, remote: true do |f| %>
  <%= f.hidden_field :post_id, value: @post.id %>
- <%= f.submit "Like" %>
+ <%= f.submit "Like", :type => :image, :src => image_path("like.png"), :class=> :like %>
  <% end %>
-</div>

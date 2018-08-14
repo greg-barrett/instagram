@@ -1,35 +1,47 @@
-<div class="user-info">
+<% provide(:title, @user.username) %>
+<div class="poster-info">
   <div class="user-avatar">
-  <% if !@user.avatar.file.nil? %>
-    <%= image_tag @user.avatar.main.url, class: :avatar  %>
-  <% else %>
-    <%= image_tag "liked.png", class: :avatar  %>
-  <% end %>
 
-  <% if @user === current_user %>
-    <p><%= link_to "Update Image", edit_user_path(current_user) %></p>
-  <% end %>
-</div>
-<div class="user-links">
-    <p>Username: <%= @user.username %></p>
-    <p><%= link_to "Edit Profile", edit_user_registration_path(@user) if @user === current_user %>
-    <p><%= link_to "Followed by #{@followers} people", followers_user_path(@user) %></p>
-    <p><%= link_to "Following #{@following} people", following_user_path(@user) %></p>
-    <% if @user != current_user %>
-      <% if !followed_by_visitor?(@user.followers) %>
-        <%= render "partials/following_form" %>
-        <% else  %>
-        <%= render "partials/un_following_form" %>
+    <div id="avatar-box">
+      <% if !@user.avatar.file.nil? %>
+        <% if @user === current_user %>
+          <%= link_to (image_tag @user.avatar.main.url, class: :avatar), edit_user_path(current_user)  %>
+        <% else %>
+          <%= image_tag @user.avatar.main.url, class: :avatar %>
+        <% end %>
+      <% else %>
+        <%= image_tag "liked.png", class: :avatar  %>
       <% end %>
-    <% end %>
+    </div>
+
+
   </div>
+  <div class="user-links">
+    <div id="profile-username">
+      <p><%= @user.username %></p>
+
+    <%= link_to "Edit Profile", edit_user_registration_path(@user) if @user === current_user %>
+    <%= link_to "logout", destroy_user_session_path, method: :delete  if @user === current_user %>
+      <% if @user != current_user %>
+      <div id="follow_form">
+          <% if !followed_by_visitor?(@user.followers) %>
+            <%= render "partials/following_form" %>
+            <% else  %>
+            <%= render "partials/un_following_form" %>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+
+    <div id="follows">
+      <p id="p-length"><%= pluralize(@posts.length,  "Post") %></p>
+      <%= link_to pluralize(@user.followers.count, "Follower"), followers_user_path(@user), id: :no_followers %>
+      <%= link_to pluralize(@user.following.count, "Following"), following_user_path(@user) %>
+      <p><%= "#{@user.first_name} #{@user.surname} " %></p>
+    </div>
+  </div>
+
 </div>
 
 
 <%= render "partials/posts" if @posts.length > 0 %>
-
-<% if @user === current_user %>
-  <div class="box">
-    <%= render "partials/post_form" %>
-  </div>
-<% end %>

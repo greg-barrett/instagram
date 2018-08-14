@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Instagram</title>
+    <%= favicon_link_tag asset_path('icon.ico'), :rel => 'icon', :type =>  'image/png' %>
+
+<title><%= full_title(yield(:title)) %></title>
     <%= csrf_meta_tags %>
-    <link href="https://fonts.googleapis.com/css?family=Roboto|Satisfy" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Satisfy" rel="stylesheet">
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -13,10 +15,6 @@
     <% if user_signed_in? %>
       <%= render "layouts/header" %>
       <% end %>
-    <%= link_to "Sign in", new_user_session_path %>
-    <%= link_to "logout", destroy_user_session_path, method: :delete  %>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
     <%= yield %>
   </body>
 </html>

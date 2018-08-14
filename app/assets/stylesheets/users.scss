@@ -4,35 +4,150 @@
 .users-posts {
   max-width: 935px;
   margin: auto;
+  border-top: 1px solid #e8e8e8;
 
 }
 .mini-post {
   display: inline-block;
   width: 30%;
   margin: 1%;
+  position: relative;
   img {
     max-width: 100%;
+    z-index: 0;
+    transition: .5s ease;
   }
 }
 
-.user-info {
+.poster-info {
   max-width: 935px;
   margin: auto;
   height: 250px;
   padding: 40px 0 0 0;
 
+  position: relative;
+
+}
+#avatar-box {
+  width: 140px;
+  margin: 0 auto 20px auto;
+
+
 }
 .avatar {
-  width: 120px;
+  max-width: 100%;
   border-radius: 50%;
   display: inline-block;
 }
+
 .user-avatar {
   display: inline-block;
   width: 29%;
+  p {
+    text-align: center;
+  }
+
 }
 
 .user-links {
   display: inline-block;
   width: 69%;
+  vertical-align: top;
+  form {
+    display: inline-block;
+  }
+
+}
+.follow_btn {
+  padding: 5px 18px;
+  font-size: .9em;
+  border-radius: 3px;
+  border: 1px solid gray;
+
+}
+#follow_btn {
+  background-color: #3897f0;
+  color: white;
+  border: none;
+  margin-right: 12px;
+  margin-left: 10px;
+}
+
+#profile-username {
+  margin-bottom: 15px;
+
+  p {
+    font-size: 1.8em;
+    display: inline-block;
+  }
+  a {
+    padding: 3px 8px;
+    font-size: .8em;
+    border-radius: 3px;
+    border: 1px solid gray;
+    margin-left: 10px;
+    position: relative;
+    bottom: 3px;
+
+  }
+}
+#follow_form {
+  display: inline-block;
+}
+#follows {
+  p {
+    margin-top: 15px;
+    font-weight: bold;
+  }
+  #p-length {
+    display: inline-block;
+    margin-right: 20px;
+    font-weight: normal;
+  }
+  a {
+    margin-right: 20px;
+  }
+}
+
+#upload {
+  margin-top: 20px;
+}
+#user_avatar {
+  text-align: center;
+}
+
+#update-avatar {
+  text-align: center;
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e8e8e8;
+
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  transition: .5s ease;
+}
+.overlay-items {
+  text-align: center;
+  position: relative;
+  top: 35%;
+}
+.mini-post:hover .overlay {
+  z-index: 1;
+}
+.mini-post:hover img {
+    opacity: 0.5;
+
+}
+.overlay_icon {
+  width: 20%;
+  vertical-align: middle;
 }

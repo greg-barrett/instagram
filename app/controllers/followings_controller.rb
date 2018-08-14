@@ -1,17 +1,24 @@
 class FollowingsController < ApplicationController
   def create
+
     @relationship=current_user.active_followings.build(following_params)
-    if @relationship.save
-      redirect_to @relationship.followed
-    else
-      redirect_to current_user
+    @user=@relationship.followed
+    @relationship.save
+    respond_to do |format|
+      format.html { redirect_to @user }
+      format.js
     end
   end
 
   def destroy
-    relationship=current_user.active_followings.find(params[:id])
-    relationship.destroy
-    redirect_to current_user
+
+    @relationship=current_user.active_followings.find(params[:id])
+    @user= @relationship.followed
+    @relationship.destroy
+    respond_to do |format|
+      format.html { redirect_to @user }
+      format.js
+    end
   end
 
   private

@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   resources :followings, :likes, :comments
   get "/feed", to: "feeds#show"
   get "/explore", to: "feeds#explore"
+  get "/liked_posts", to: "users#liked_posts"
 
 
 

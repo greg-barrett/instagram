@@ -12,9 +12,9 @@
       <% end %>
     </div>
       <div class="thirds middle">
-        <div class="search">
-          search
-        </div>
+
+          <%= render "partials/tag_search" %>
+
       </div>
       <div class="thirds">
         <div class="glyph-cont">
@@ -22,7 +22,7 @@
         </div>
 
         <div class="glyph-cont">
-          <%=  image_tag "activity.png", class: :gylph  %>
+          <%=  link_to image_tag("activity.png", class: :gylph), liked_posts_path  %>
         </div>
         <div class="glyph-cont">
           <%= link_to image_tag("explore.png", class: :gylph), explore_path  %>
@@ -32,3 +32,4 @@
   </div>
 
 </header>
+<div id="spacer"></div>

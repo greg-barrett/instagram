@@ -1,6 +1,4 @@
-<div class="box">
- <%= form_for @user.passive_followings.build do |f| %>
- <%= f.hidden_field :followed_id, value: @user.id %>
- <%= f.submit %>
- <% end %>
-</div>
+<%= form_for(@user.passive_followings.build, remote: true) do |f| %>
+<%= f.hidden_field :followed_id, value: @user.id %>
+<%= f.submit "Follow", class: :follow_btn, id: :follow_btn %>
+<% end %>

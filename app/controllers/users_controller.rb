@@ -5,8 +5,6 @@ class UsersController < ApplicationController
     @followers=@user.followers.length
     @following=@user.following.length
     @posts=@user.posts
-    @post=Post.new
-    @post.tags.build
   end
 
   def edit
@@ -41,6 +39,10 @@ class UsersController < ApplicationController
   def following
     @user= User.find(params[:id])
     @users=@user.following
+  end
+
+  def liked_posts
+    @posts=current_user.liked_posts
   end
   private
 

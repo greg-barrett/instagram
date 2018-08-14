@@ -1,0 +1,7 @@
+<% provide(:title, current_user.username) %>
+<h1>#Likes</h1>
+<% if @posts.count > 0 %>
+  <%= render "partials/posts" %>
+<% else %>
+  <p>Posts that you like will appear here</p>
+<% end %>

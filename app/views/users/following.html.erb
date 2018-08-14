@@ -1,7 +1,29 @@
-<h1>Followings</h1>
-<p><%= @user.first_name %> is currently following.</p>
-<% if @users.length > 0  %>
-  <% @users.each do |user|  %>
-    <%= link_to "#{user.first_name}", user_path(user) %>
+<% provide(:title, @user.username) %>
+<div class="follows-list">
+  <h2>Following</h2>
+  <% if @users.length > 0  %>
+    <% @users.each do |user|  %>
+    <div class="f-user-box">
+      <div class="f-avatar-box">
+        <%= link_to image_tag(user.avatar.main), user_path(user) %>
+      </div>
+
+      <div class="f-details-box">
+        <%= link_to user_path(user) do %>
+          <p id="username"><%= user.username %></p>
+          <p id="name"><%= "#{user.first_name} #{user.surname}" %></p>
+        <% end %>
+      </div>
+
+      <div class="f-follow-box" id="follower_<%= user.id %>">
+        <% if current_user.following.include?(user) %>
+          <%= render "partials/hun_following_form", user: user %>
+        <% else  %>
+          <%= render "partials/hfollowing_form", user: user %>
+        <% end %>
+      </div>
+
+    </div>
   <% end %>
-<% end %>
+  <% end %>
+</div>

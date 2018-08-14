@@ -73,11 +73,9 @@
    font-family: 'Roboto', sans-serif;
    background-color: #f7f7f7;
  }
-.box {
-  border: 1px solid black;
-  margin: 10px;
-  background-color: #eee;
-}
+.turbolinks-progress-bar {
+  width: 8px;
+  background-image: linear-gradient(to right, #f45e0e, #ff0041, #fa0075, #cf00b2, #5d12eb);}
 
 header {
   padding-top: 20px;
@@ -85,6 +83,11 @@ header {
   height: 67px;
   border-bottom: 1px solid #e8e8e8;
   background-color: white;
+  position: fixed;
+  z-index: 2;
+}
+#spacer {
+  padding-bottom: 67px;
 
 }
 .header-box{
@@ -107,6 +110,9 @@ header {
   background-color: #eee;
   height: 25px;
   line-height: 25px;
+  width: 100%;
+  border: none;
+  border-radius: 3px;
 }
 
 .logo-text {
@@ -137,20 +143,55 @@ header {
 
 }
 
-
-@media only screen and (max-width: 370px) {
+.hidden {
+  display: none;
+}
+#form-alert {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 10px;
+}
+h1 {
+  text-align: center;
+  padding: 30px 0;
+  font-size: 2em;
+  font-weight: bold;
+}
+@media only screen and (max-width: 375px) {
   .logo-image {
     display: none;
   }
   .gylph {
-  margin-left: 5px;
-  margin-right: 5px;
+  margin-left: 2px;
+  margin-right: 2px;
   }
   .logo-text {
     border: none;
-    padding-left: none;
+    padding-left: 0;
+  }
+  .form-container {
+    width: 100%;
+  }
+  .sub-form {
+    width: 100%;
   }
 
+}
+@media only screen and (max-width: 500px) {
+  .user-links {
+    display: none;
+  }
+  .user-avatar {
+    width:100%;
+  }
+  .poster-info {
+    height:200px;
+    padding-top: 30px;
+  }
+  .mini-post {
+    width: 100%;
+  }
 }
 @media only screen and (max-width: 670px) {
   .middle {
@@ -158,6 +199,16 @@ header {
   }
   .thirds {
     width: 49%;
+  }
+
+  .post-show-container {
+    width: 95%;
+    img {
+      width: 100%
+    }
+    .interactivity {
+      width: 100%;
+    }
   }
 }
 @media only screen and (max-width: 670px) {

@@ -1,3 +1,40 @@
 // Place all the styles related to the Posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#post_post_image {
+  margin-bottom: 10px;
+}
+.post-show-container {
+  width: 700px;
+  margin: auto;
+  background-color: white;
+}
+.post_show_image {
+  width: 55%;
+  display: inline-block;
+}
+.interactivity {
+  width: 44%;
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+  height: 387px;
+}
+.user-info-show {
+  margin: 15px 15px 0 15px;
+  height: 45px;
+  border-bottom: 1px solid #e8e8e8;;
+}
+
+.post-caption {
+  margin-bottom: 10px;
+}
+
+.post-partial {
+  padding: 15px 0 0 15px;
+  margin-right: 15px;
+}
+.post-info{
+  height: 65%;
+}

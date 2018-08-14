@@ -1,7 +1,8 @@
-
+<% provide(:title, "Login") %>
 <div class="form-container">
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <h2 class="logo">Instagram</h2>
+  <p class="alert" id="form-alert"><%= alert %></p>
     <div class="field">
         <%= f.text_field :login, :placeholder => 'Username or email', class: :in_field %></p>
     </div>

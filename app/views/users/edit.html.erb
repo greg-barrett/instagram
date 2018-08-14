@@ -1,15 +1,20 @@
-<div class="box">
-
+<% provide(:title, @user.username) %>
+<div class="form-container">
+  <h2 id="update-avatar">Update Avatar</h2>
+  <div id="avatar-box">
+    <% if !@user.avatar.file.nil? %>
+      <%= image_tag @user.avatar.main.url, class: :avatar  %>
+    <% else %>
+      <%= image_tag "liked.png", class: :avatar  %>
+    <% end %>
+  </div>
   <%= form_for((@user), :html =>{:multipart => true})  do |f| %>
-    <div class="box">
-      <%= f.hidden_field :user_id, value: @user.id %>
-      <%= f.label :avatar %>
+    <%= f.hidden_field :user_id, value: @user.id %>
+    <div class="actions">
       <%= f.file_field :avatar %>
     </div>
-
-    <%= f.submit %>
-    <% end %>
-
-
-
+    <div class="actions" id="upload">
+      <%= f.submit "Upload", class: :submit %>
+    </div>
+  <% end %>
 </div>

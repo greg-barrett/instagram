@@ -1,10 +1,7 @@
-<%= form_for(Comment.new ) do |f| %>
-  <p>Comment below...</p>
+<div class="comment-form-container">
+  <%= form_for(Comment.new, remote: true) do |f| %>
   <%= f.hidden_field :post_id, value: @post.id %>
-  <div class="box">
-    <%= f.label :text %>
-    <%= f.text_field :text %>
-  </div>
-
-  <%= f.submit "Save "%>
+  <%= f.text_field :text, :placeholder => "Add a comment...", class: :comment_field %>
+  <%= f.submit "Save", class: :hidden %>
   <% end %>
+</div>

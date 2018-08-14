@@ -1,20 +1,20 @@
+<div class="form-container">
 <%= form_for @post, :html =>{:multipart => true}  do |f| %>
-  <div class="box">
-    <%= f.label :post_image %>
+  <div class="actions">
     <%= f.file_field :post_image %>
   </div>
 
-  <div class="box">
-    <%= f.label :caption %>
-    <%= f.text_field :caption %>
+  <div class="field">
+    <%= f.text_field :caption, :placeholder => 'Title', class: :in_field %>
   </div>
 
-  <div class="box">
-    <p>Tags</p>
+  <div class="field">
     <%= f.fields_for :tags do |tag_form| %>
-    <%= tag_form.label :hashtag %>
-      <%= tag_form.text_field :hashtag %>
+      <%= tag_form.text_field :hashtag, :placeholder => '#tag...', class: :in_field %>
     <% end  %>
   </div>
-  <%= f.submit %>
+  <div class="actions">
+    <%= f.submit "Post ", class: :submit %>
+  </div>
   <% end %>
+</div>

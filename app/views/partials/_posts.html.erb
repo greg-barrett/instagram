@@ -1,8 +1,21 @@
 <div class="users-posts">
+  <% if @user === current_user %>
+    <div class="mini-post new-post">
+
+      <%= link_to image_tag("add.png"), new_post_path,  id: :mini_image %>
+
+    </div>
+  <% end %>
   <% @posts.each do |p| %>
     <%= link_to post_path(p) do %>
       <div class="mini-post">
         <%= image_tag p.post_image.main %>
+        <div class="overlay">
+          <div class="overlay-items">
+            <%= image_tag "like.png", class: :overlay_icon %><%= p.likes.count %>
+            <%= image_tag "comment.png", class: :overlay_icon %><%= p.comments.count %>
+          </div>
+        </div>
       </div>
     <% end %>
   <% end %>

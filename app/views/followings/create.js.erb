@@ -1,0 +1,4 @@
+$("#follow_form").html("<%= escape_javascript(render('partials/un_following_form')) %>");
+$("#no_followers").html('<%= pluralize(@user.followers.count, "Follower") %>');
+
+$("#follower_<%= @user.id %>").html("<%= escape_javascript(render('partials/un_following_form')) %>");

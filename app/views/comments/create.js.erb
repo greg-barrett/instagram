@@ -1,0 +1,2 @@
+$("#comment_form_<%= @post.id %>").html("<%= escape_javascript(render('partials/comment_form')) %>");
+$("#comments_<%= @post.id %>").html("<%= escape_javascript(render('partials/comments')) %>");
