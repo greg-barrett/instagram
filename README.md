@@ -9,33 +9,7 @@ The aim of this project was to create an app which would show case all the skill
 This app is a clone of a popular website called instagram. If you haven't heard of Instagram you probably never will becuase my version is likely to eclipse it over the coming weeks.
 Jokes aside...
 
-## Stack
-- Ruby on Rails
-- Vanilla JS
-- Sass
-
-## Authentication
-- Devise
-
-## Image Uploads
-- Carrierwave
-
-## Online storage
-- Amazon AWS
-
-## Hosting
-- Heroku
-- https://insteadgram1.herokuapp.com/users/sign_in
-
-**User**
-
-|username|password|
-|---|---|
-|jblanco|1234q|
-
-
-
-## Features
+# Features
 - Users authenticate with either their email address or username and password
 - Users can update their personal information
 - Users can follow other users- without permission via AJAX requests
@@ -50,9 +24,32 @@ Jokes aside...
   - Users can also search for posts by hashtag
 
 
+# Stack
+- Ruby on Rails
+- Vanilla JS
+- Sass
+
+# Authentication
+- Devise
+
+# Image Uploads
+- Carrierwave
+
+# Online storage
+- Amazon AWS
+
+# Hosting
+- Heroku
+- https://insteadgram1.herokuapp.com/users/sign_in
+
+**User**
+
+|username|password|
+|---|---|
+|jblanco|1234q|
+
 
 I am really happy with how this project turned out. I have been able to set up complex data models (which work!) and make a good looking front end. The site is not made for mobile but media queries have been used to give it a reasonable appearence.
-
 
 There are endless features which I could add but it is time to move onto my next project. In the future I would like to add testing. This is something I have neglected in order to get the project to completion but I'd feel happier if I had tested along the way. I'm also a little disapointed how little js I;ve needed for this project but would like to look into how I could integrate vue compnents into Rails in the future.
 
