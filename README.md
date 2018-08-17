@@ -1,5 +1,7 @@
 Instagram Clone
 
+(profile.PNG)
+
 Aim: The aim of this project was to create an app which would show case all the skills I have learnt after following The Odin Project
 
 Description
