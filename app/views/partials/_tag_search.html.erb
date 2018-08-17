@@ -1,4 +1,4 @@
 <%= form_for(Tag.new, method: :get) do |f| %>
-  <%= f.text_field :hashtag, :placeholder => '#search', class: :search %>
+  <%= f.text_field :hashtag, :placeholder => '#search', class: :search, required: :required %>
   <%= f.submit "Search", class: :hidden %>
 <% end %>

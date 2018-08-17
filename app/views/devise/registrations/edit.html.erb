@@ -15,7 +15,7 @@
 
     <div class="field">
       <%= f.label :username, class: :label_field %>
-      <%= f.text_field :username, class: :in_field, id: :input_sizing %>
+      <%= f.text_field :username, class: :in_field, id: :input_sizing, :minlength=> "3", :maxlength=> "25" %>
     </div>
 
     <div class="field">
@@ -23,25 +23,21 @@
       <%= f.email_field :email, autofocus: true, autocomplete: "email", class: :in_field, id: :input_sizing %>
     </div>
 
-    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-      <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-    <% end %>
-
     <div class="field">
       <%= f.label :new_password, class: :label_field %>
-      <%= f.password_field :password, autocomplete: "off", class: :in_field, id: :input_sizing, :placeholder => 'Minimum of 6 characters' %>
+      <%= f.password_field :password, autocomplete: "off", class: :in_field, id: :input_sizing, :placeholder => 'Minimum of 6 characters', :minlength=> "6" %>
       <% if @minimum_password_length %>
       <% end %>
     </div>
 
     <div class="field">
       <%= f.label :password_confirmation, class: :label_field %>
-      <%= f.password_field :password_confirmation, autocomplete: "off", class: :in_field, id: :input_sizing %>
+      <%= f.password_field :password_confirmation, autocomplete: "off", class: :in_field, id: :input_sizing, :minlength=> "6" %>
     </div>
 
     <div class="field">
       <%= f.label :current_password, class: :label_field %>
-      <%= f.password_field :current_password, autocomplete: "off", class: :in_field, id: :input_sizing %>
+      <%= f.password_field :current_password, autocomplete: "off", class: :in_field, id: :input_sizing, required: :required, :minlength=> "6" %>
     </div>
 
     <div class="actions">

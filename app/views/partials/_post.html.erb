@@ -4,6 +4,8 @@
     <div class="user-info">
       <% if !post.user.avatar.file.nil? %>
           <%= image_tag(post.user.avatar.main.url, class: :user_image) %>
+        <% else %>
+          <%= image_tag("user.png", class: :user_image) %>
       <% end %>
       <p class="user_name"><%= post.user.username %></p>
     </div>

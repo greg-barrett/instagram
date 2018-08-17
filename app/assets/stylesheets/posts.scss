@@ -38,3 +38,17 @@
 .post-info{
   height: 65%;
 }
+.delete {
+  font-size: .8em;
+  color: red;
+  float: right;
+  padding-right: 3px;
+  display: inline-block;
+  height: 15px;
+}
+.delete:hover {
+  font-size: 1em;
+}
+#hashtags {
+  margin-bottom: 10px;
+}

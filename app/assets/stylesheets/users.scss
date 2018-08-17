@@ -24,20 +24,19 @@
   margin: auto;
   height: 250px;
   padding: 40px 0 0 0;
-
   position: relative;
 
 }
 #avatar-box {
   width: 140px;
   margin: 0 auto 20px auto;
-
-
+  position: relative;
 }
 .avatar {
   max-width: 100%;
   border-radius: 50%;
   display: inline-block;
+  background-color: white;
 }
 
 .user-avatar {
@@ -150,4 +149,10 @@
 .overlay_icon {
   width: 20%;
   vertical-align: middle;
+}
+#first-v {
+  text-align: center;
+}
+#ed-icon{
+  margin-top: 5px;
 }

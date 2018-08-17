@@ -1,29 +1,39 @@
 <% provide(:title, @user.username) %>
 <div class="follows-list">
   <h2>Followers</h2>
-  <% if @users.length > 0  %>
-    <% @users.each do |user|  %>
-    <div class="f-user-box">
-      <div class="f-avatar-box">
-        <%= link_to image_tag(user.avatar.main), user_path(user) %>
-      </div>
 
-      <div class="f-details-box">
-        <%= link_to user_path(user) do %>
-          <p id="username"><%= user.username %></p>
-          <p id="name"><%= "#{user.first_name} #{user.surname}" %></p>
-        <% end %>
-      </div>
+    <% if @users.count > 0  %>
+      <% @users.each do |user|  %>
+      <div class="f-user-box">
+        <div class="f-avatar-box">
+          <% if !user.avatar.file.nil? %>
+              <%= image_tag(user.avatar.main.url, class: :user_image) %>
+            <% else %>
+              <%= image_tag("user.png", class: :user_image) %>
+          <% end %>
+        </div>
 
-      <div class="f-follow-box" id="follower_<%= user.id %>">
-        <% if current_user.following.include?(user) %>
-          <%= render "partials/hun_following_form", user: user %>
-        <% else  %>
-          <%= render "partials/hfollowing_form", user: user %>
-        <% end %>
-      </div>
+        <div class="f-details-box">
+          <%= link_to user_path(user) do %>
+            <p id="username"><%= user.username %></p>
+            <p id="name"><%= "#{user.first_name} #{user.surname}" %></p>
+          <% end %>
+        </div>
 
-    </div>
-  <% end %>
-  <% end %>
+        <div class="f-follow-box" id="follower_<%= user.id %>">
+          <% if current_user.following.include?(user) %>
+            <%= render "partials/hun_following_form", user: user %>
+          <% else  %>
+            <%= render "partials/hfollowing_form", user: user %>
+          <% end %>
+        </div>
+
+      </div>
+    <% end %>
+    <% else %>
+      <div id="first-v-div">
+        <p id="first-v">Users who follow you will appear here</p>
+      </div>
+    <% end %>
+
 </div>

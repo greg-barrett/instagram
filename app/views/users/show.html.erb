@@ -1,19 +1,23 @@
 <% provide(:title, @user.username) %>
 <div class="poster-info">
   <div class="user-avatar">
-
     <div id="avatar-box">
-      <% if !@user.avatar.file.nil? %>
         <% if @user === current_user %>
-          <%= link_to (image_tag @user.avatar.main.url, class: :avatar), edit_user_path(current_user)  %>
+          <% if !@user.avatar.file.nil? %>
+            <%= link_to (image_tag @user.avatar.main.url, class: :avatar), edit_user_path(current_user) %>
+          <% else %>
+            <%= link_to (image_tag "user.png", class: :avatar), edit_user_path(current_user) %>
+          <% end %>
+          <p id="ed-icon"><%= link_to "Edit Icon", edit_user_path(current_user) %></p>
         <% else %>
-          <%= image_tag @user.avatar.main.url, class: :avatar %>
+          <% if !@user.avatar.file.nil? %>
+            <%= image_tag @user.avatar.main.url, class: :avatar %>
+          <% else %>
+            <%= image_tag "user.png", class: :avatar  %>
+          <% end %>
         <% end %>
-      <% else %>
-        <%= image_tag "liked.png", class: :avatar  %>
-      <% end %>
-    </div>
 
+    </div>
 
   </div>
   <div class="user-links">
@@ -44,4 +48,4 @@
 </div>
 
 
-<%= render "partials/posts" if @posts.length > 0 %>
+<%= render "partials/posts" %>

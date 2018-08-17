@@ -1,11 +1,16 @@
 <% provide(:title, @user.username) %>
 <div class="follows-list">
   <h2>Following</h2>
+
   <% if @users.length > 0  %>
     <% @users.each do |user|  %>
     <div class="f-user-box">
       <div class="f-avatar-box">
-        <%= link_to image_tag(user.avatar.main), user_path(user) %>
+        <% if !user.avatar.file.nil? %>
+            <%= image_tag(user.avatar.main.url, class: :user_image) %>
+          <% else %>
+            <%= image_tag("user.png", class: :user_image) %>
+        <% end %>
       </div>
 
       <div class="f-details-box">
@@ -23,7 +28,12 @@
         <% end %>
       </div>
 
+  </div>
+  <% end %>
+  <% else %>
+    <div id="first-v-div">
+      <p id="first-v">Users you follow will appear here</p>
     </div>
   <% end %>
-  <% end %>
+
 </div>

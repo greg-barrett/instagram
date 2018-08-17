@@ -1,4 +1,8 @@
 class UsersController < ApplicationController
+  def index
+    @users=User.where(first_name: params[:name])
+
+  end
 
   def show
     @user= User.find(params[:id])

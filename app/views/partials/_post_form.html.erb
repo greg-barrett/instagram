@@ -1,16 +1,16 @@
 <div class="form-container">
 <%= form_for @post, :html =>{:multipart => true}  do |f| %>
   <div class="actions">
-    <%= f.file_field :post_image %>
+    <%= f.file_field :post_image, required: :required %>
   </div>
 
   <div class="field">
-    <%= f.text_field :caption, :placeholder => 'Title', class: :in_field %>
+    <%= f.text_field :caption, :placeholder => 'Title', class: :in_field,  required: :required %>
   </div>
 
   <div class="field">
     <%= f.fields_for :tags do |tag_form| %>
-      <%= tag_form.text_field :hashtag, :placeholder => '#tag...', class: :in_field %>
+      <%= tag_form.text_field :hashtag, :placeholder => '#tag...', class: [:in_field, :no_val] %>
     <% end  %>
   </div>
   <div class="actions">

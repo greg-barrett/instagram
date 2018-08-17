@@ -5,13 +5,13 @@
     <% if !@user.avatar.file.nil? %>
       <%= image_tag @user.avatar.main.url, class: :avatar  %>
     <% else %>
-      <%= image_tag "liked.png", class: :avatar  %>
+      <%= image_tag "user.png", class: :avatar  %>
     <% end %>
   </div>
   <%= form_for((@user), :html =>{:multipart => true})  do |f| %>
     <%= f.hidden_field :user_id, value: @user.id %>
     <div class="actions">
-      <%= f.file_field :avatar %>
+      <%= f.file_field :avatar, required: :required %>
     </div>
     <div class="actions" id="upload">
       <%= f.submit "Upload", class: :submit %>

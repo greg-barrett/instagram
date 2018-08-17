@@ -1,2 +1,6 @@
 <% provide(:title, "Feed") %>
-<%= render "partials/post" %>
+<% if @posts.count > 0 %>
+  <%= render "partials/post" %>
+<% else %>
+  <p id="first-v">Posts will appear here after you've followed other users.</p>
+<% end %>

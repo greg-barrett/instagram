@@ -1,9 +1,7 @@
 <div class="users-posts">
   <% if @user === current_user %>
     <div class="mini-post new-post">
-
       <%= link_to image_tag("add.png"), new_post_path,  id: :mini_image %>
-
     </div>
   <% end %>
   <% @posts.each do |p| %>

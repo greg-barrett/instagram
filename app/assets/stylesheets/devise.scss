@@ -1,3 +1,29 @@
+.reg-back {
+  padding-top: 20px;
+  height: 100vh;
+  background: linear-gradient(240deg, #500fc5, #ed0c0c, #0c96ed, #ceed0c);
+  background-size: 800% 800%;
+
+  -webkit-animation: AnimationName 47s ease infinite;
+  -moz-animation: AnimationName 47s ease infinite;
+  animation: AnimationName 47s ease infinite;
+
+  @-webkit-keyframes AnimationName {
+     0%{background-position:0% 82%}
+     50%{background-position:100% 19%}
+     100%{background-position:0% 82%}
+  }
+  @-moz-keyframes AnimationName {
+     0%{background-position:0% 82%}
+     50%{background-position:100% 19%}
+     100%{background-position:0% 82%}
+  }
+  @keyframes AnimationName {
+     0%{background-position:0% 82%}
+     50%{background-position:100% 19%}
+     100%{background-position:0% 82%}
+}
+}
 .form-container {
   width: 320px;
   margin: auto;
@@ -88,4 +114,11 @@
 }
 #input_sizing {
   margin-top: 4px;
+}
+
+input:valid {
+  border: 1px solid #3897f0;
+}
+.no_val:valid {
+  border: inherit;
 }

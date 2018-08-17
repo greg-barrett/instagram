@@ -3,6 +3,7 @@ class PostsController < ApplicationController
     @post=Post.new
     @post.tags.build
   end
+
   def show
     @post=Post.find(params[:id])
     @tags=@post.tags
@@ -17,15 +18,19 @@ class PostsController < ApplicationController
     @post= current_user.posts.build(post_params)
     if @post.save
       processtags(@post)
+      flash[:success]="The post was saved"
       redirect_to current_user
     else
-      render :new
+      @post.tags.build
+      flash[:warning]="Sorry something went wrong"
+      render 'new'
     end
   end
 
   def destroy
     Post.find(params[:id]).destroy
     redirect_to user_path(current_user)
+    flash[:success]="The post was deleted"
   end
 
   private

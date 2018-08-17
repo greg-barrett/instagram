@@ -6,6 +6,8 @@
       <div class="user-info-show">
         <% if !@post.user.avatar.file.nil? %>
             <%= image_tag(@post.user.avatar.main.url, class: :user_image) %>
+          <% else %>
+            <%= image_tag("user.png", class: :user_image) %>
         <% end %>
         <p class="user_name"><%= @post.user.username %></p>
       </div>
@@ -13,8 +15,7 @@
 
     <div class="post-info">
       <p class="caption_line post-caption" id="username"><%= @post.user.username %></p>
-      <p class="caption_line"><%= "  #{@post.caption}" %></p></br>
-
+      <p class="caption_line"><%= "  #{@post.caption}" %></p>
       <div id="hashtags">
         <% if @tags.count > 0 %>
           <% @tags.each do |tag| %>
@@ -35,12 +36,16 @@
       <% else %>
         <%= render "partials/hlike", post: @post %>
       <% end %>
+
     </div>
 
     <p id="likes_<%= @post.id %>"><%= pluralize(@post.likes.count, "Like") %></p></br>
 
     </div>
     <div id="comment_form_<%= @post.id %>" class="post-partial">
+      <% if @post.user === current_user %>
+        <%= link_to "delete", post_path(@post), method: :delete, class: :delete %>
+      <% end %>
       <%= render "partials/hcomment_form", post: @post %>
     </div>
   </div>

@@ -75,8 +75,15 @@
  }
 .turbolinks-progress-bar {
   width: 8px;
-  background-image: linear-gradient(to right, #f45e0e, #ff0041, #fa0075, #cf00b2, #5d12eb);}
+  background-image: linear-gradient(to right, #f45e0e, #ff0041, #fa0075, #cf00b2, #5d12eb);
+}
 
+.alert {
+  text-align: center;
+  line-height: 30px;
+  color: white;
+  background-color: #3897f0;
+}
 header {
   padding-top: 20px;
   width: 100%;

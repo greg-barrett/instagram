@@ -1,4 +1,4 @@
 <%= form_for local_assigns[:post].likes.build, remote: true do |f| %>
 <%= f.hidden_field :post_id, value: post.id %>
-<%= f.submit "Submit", :type => :image, :src => image_path("like.png"), :class=> :like %>
+<%= f.submit "Submit", :type => :image, :src => image_path("like.png"), :class=> [:like, :no_val] %>
 <% end %>

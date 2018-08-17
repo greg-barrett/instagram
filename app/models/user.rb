@@ -18,10 +18,10 @@ class User < ApplicationRecord
   #validations
   validates :first_name, :surname, :username, :email, presence: true
   validates :email, :username, uniqueness: { case_sensitive: false, message: "%{value} already taken." }
-  validates :username, length: { in: 6..25}
+  validates :username, length: { in: 3..25}
   validates_format_of :username, with: /^[a-zA-Z0-9_\.]*$/, :multiline => true
   validates :email, format: {with: /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i }
-  #username regex
+
 
 
   #devise username setup

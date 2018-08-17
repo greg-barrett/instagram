@@ -14,6 +14,6 @@ class Post < ApplicationRecord
 
   #validations
   validates :caption, length: { maximum: 250 }
-  #validates :post_image, presence: true
+  validates :post_image, :caption, presence: true
 
 end
