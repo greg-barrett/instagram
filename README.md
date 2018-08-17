@@ -2,14 +2,14 @@
 
 ![Profile Screenshot](profile.PNG)
 
-# Aim
-The aim of this project was to create an app which would show case all the skills I have learnt after following The Odin Project.
+**Aim**
+The aim of this project was to create an app which would showcase all the skills I have learnt by following The Odin Project.
 
-# Description
-This app is a clone of a popular website called instagram. If you haven't heard of Instagram you probably never will becuase my version is likely to eclipse it over the coming weeks.
+**Description**
+This app is a clone of a popular website called instagram. If you haven't heard of Instagram you probably never will because my version is likely to eclipse it over the coming weeks.
 Jokes aside...
 
-# Features
+**Features**
 - Users authenticate with either their email address or username and password
 - Users can update their personal information
 - Users can follow other users- without permission via AJAX requests
@@ -24,40 +24,40 @@ Jokes aside...
   - Users can also search for posts by hashtag
 
 
-# Stack
+**Stack**
 - Ruby on Rails
 - Vanilla JS
 - Sass
 
-# Authentication
+**Authentication**
 - Devise
 
-# Image Uploads
+**Image Uploads**
 - Carrierwave
 
-# Online storage
+**Online storage**
 - Amazon AWS
 
-# Hosting
+**Hosting**
 - Heroku
 - https://insteadgram1.herokuapp.com/users/sign_in
 
-**User**
+**User Login**
 
 |username|password|
 |---|---|
 |jblanco|1234q|
 
 
-I am really happy with how this project turned out. I have been able to set up complex data models (which work!) and make a good looking front end. The site is not made for mobile but media queries have been used to give it a reasonable appearence.
+I am really happy with how this project turned out. I have been able to set up complex data models (which work!) and make a good looking front-end. So far the site works in Firefox and on Iphone, other testing coming soon.
 
-There are endless features which I could add but it is time to move onto my next project. In the future I would like to add testing. This is something I have neglected in order to get the project to completion but I'd feel happier if I had tested along the way. I'm also a little disapointed how little js I;ve needed for this project but would like to look into how I could integrate vue compnents into Rails in the future.
+There are endless features which I could add but it is time to move onto my next project. In the future I would like to add testing. This is something I have neglected in order to get the project to completion but I'd feel happier if I had tested along the way. I'm also a little disappointed how little js I've needed for this project and would like to look into how I could integrate Vue components into Rails in the future.
 
-# Other imporvements
+**Other improvements**
 - Search by full name, username or email and get non exact matches
 - Add basic image filters for the posts
 - regex for passwords and usernames
-- Total refactor of partials and css which have become a little...damp
+- Total refactor of partials and CSS which have become a little...damp
 - Revise routes to bare essentials
 - Add post upload to header
 - Move the search feature out of the Tags controller...Shhhh! Don't tell anyone!
