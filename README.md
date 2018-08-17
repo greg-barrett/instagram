@@ -1,6 +1,6 @@
 # Instagram Clone
 
-![Profile Scrrenshot](profile.PNG)
+![Profile Screenshot](profile.PNG)
 
 # Aim
 The aim of this project was to create an app which would show case all the skills I have learnt after following The Odin Project.
