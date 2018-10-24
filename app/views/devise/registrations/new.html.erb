@@ -1,10 +1,15 @@
 <% provide(:title, "Register") %>
 <div class="reg-back">
+
   <div class="form-container">
     <%= devise_error_messages! %>
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-      <h2 class="logo">Instagram</h2>
-
+    <h2 class="logo">Insteadgram</h2>
+    <div class="disclaimer">
+      <p>Disclaimer: This website is not associated in anyway with the real Instagram.</p>
+      <p>This website was made to showcase what the developer can do and should not be used to make a real Instagram profile.</p>
+      </br>
+    </div>
       <div class="field">
 
         <%= f.text_field :first_name, :placeholder => 'First Name', class: :in_field, :required=> "required" %>
